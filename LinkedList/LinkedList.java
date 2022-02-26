@@ -14,6 +14,7 @@ import java.util.NoSuchElementException;
 public class LinkedList {
     private Node first;
     private Node last;
+    private int size;
     
     public void addLast(int item) {
         Node node = new Node(item);
@@ -25,6 +26,8 @@ public class LinkedList {
             this.last.next = node;
             this.last = node;
         }
+        
+        size++;
     }
     
     public void addFirst(int item) {
@@ -36,6 +39,8 @@ public class LinkedList {
             node.next = this.first;
             this.first = node;
         }
+        
+        size++;
     }
     
     public int indexOf(int item) {
@@ -60,12 +65,13 @@ public class LinkedList {
         
         if (first == last) {
             first = last = null;
-            return;
+        } else {
+            Node second = this.first.next;
+            first.next = null;
+            this.first = second;
         }
         
-        Node second = this.first.next;
-        first.next = null;
-        this.first = second;
+        size--;
     }
     
     public void removeLast() {
@@ -73,12 +79,17 @@ public class LinkedList {
         
         if (first == last) {
             first = last = null;
-            return;
+        } else {
+            Node previous = getPrevious(last);
+            last = previous;
+            last.next = null; 
         }
         
-        Node previous = getPrevious(last);
-        last = previous;
-        last.next = null;
+        size--;
+    }
+    
+    public int size() {
+        return size;
     }
     
     private Node getPrevious(Node node) {
