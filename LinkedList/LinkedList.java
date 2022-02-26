@@ -49,6 +49,17 @@ public class LinkedList {
         return -1;
     }
     
+    public boolean contains(int item) {
+        Node current = this.first;
+        while (current != null) {
+            if (current.value == item) return true;
+            
+            current = current.next;
+        }
+        
+        return false;
+    }
+    
     private boolean isEmpty() {
         return this.first == null;
     }
