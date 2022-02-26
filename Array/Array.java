@@ -38,10 +38,10 @@ public class Array {
     }
     
     public void removeAt(int index) {
-        if (index < 0 || index > count) throw new IllegalArgumentException();
+        if (index < 0 || index >= count) throw new IllegalArgumentException();
         
         // shift the items
-        for (int i = index; i < count - 1; i++)
+        for (int i = index; i < count; i++)
             items[i] = items[i + 1];
         
         count--; // decrement the count since we just remove an item

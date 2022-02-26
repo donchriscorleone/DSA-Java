@@ -7,7 +7,6 @@ package datastructuresandalgorithms;
 
 import datastructuresandalgorithms.Array.Array;
 import datastructuresandalgorithms.LinkedList.LinkedList;
-import java.util.Arrays;
 
 /**
  *
@@ -23,7 +22,7 @@ public class DataStructuresAndAlgorithms {
         arr.add(2);
         arr.add(3);
         
-        arr.removeAt(0);
+        arr.removeAt(1);
         System.out.println("Index of 3 is " + arr.indexOf(3));
         arr.print();
         System.out.println("Size " + arr.size());
