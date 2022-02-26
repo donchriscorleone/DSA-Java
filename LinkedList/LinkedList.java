@@ -5,6 +5,8 @@
  */
 package datastructuresandalgorithms.LinkedList;
 
+import java.util.NoSuchElementException;
+
 /**
  *
  * @author christopherii
@@ -51,6 +53,19 @@ public class LinkedList {
     
     public boolean contains(int item) {
         return indexOf(item) != -1;
+    }
+    
+    public void removeFirst() {
+        if (isEmpty()) throw new NoSuchElementException();
+        
+        if (first == last) {
+            first = last = null;
+            return;
+        }
+        
+        Node second = this.first.next;
+        first.next = null;
+        this.first = second;
     }
     
     private boolean isEmpty() {
