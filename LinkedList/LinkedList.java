@@ -153,6 +153,25 @@ public class LinkedList {
         else System.out.println(a.value + " " + a.next.value);
     }
     
+    public boolean hasLoop() {
+        Node a = first;
+        Node b = first;
+        
+        while (b != null) {
+            if (a == b.next) return true;
+            
+            a = a.next;
+
+            if (b == last) {
+                b = a;
+            } else {
+                b = b.next.next;
+            }
+        }
+        
+        return false;
+    }
+    
     private Node getPrevious(Node node) {
         Node current = first;
         while (current != null) {
