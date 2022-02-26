@@ -10,16 +10,14 @@ package datastructuresandalgorithms.LinkedList;
  * @author christopherii
  */
 public class LinkedList {
-    // declare head and tails
     private Node first;
     private Node last;
     
-    // create addLast method
     public void addLast(int item) {
         Node node = new Node(item);
         
         // check if first and last are empty
-        if (this.first == null) {
+        if (isEmpty()) {
             this.first = this.last = node;
         } else {
             this.last.next = node;
@@ -27,8 +25,21 @@ public class LinkedList {
         }
     }
     
+    public void addFirst(int item) {
+        Node node = new Node(item);
+        
+        if (isEmpty()) {
+            this.first = last = node;
+        } else {
+            node.next = this.first;
+            this.first = node;
+        }
+    }
     
-    // First, we need to create a Node class    
+    private boolean isEmpty() {
+        return this.first == null;
+    }
+    
     public class Node {
         private int value;
         private Node next;
