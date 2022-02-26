@@ -36,6 +36,19 @@ public class LinkedList {
         }
     }
     
+    public int indexOf(int item) {
+        Node pointer = this.first;
+        int index = 0;
+        while (pointer != null) {
+            if (pointer.value == item) return index;
+            
+            pointer = pointer.next;
+            index++;
+        }
+        
+        return -1;
+    }
+    
     private boolean isEmpty() {
         return this.first == null;
     }
