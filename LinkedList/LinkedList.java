@@ -50,14 +50,7 @@ public class LinkedList {
     }
     
     public boolean contains(int item) {
-        Node current = this.first;
-        while (current != null) {
-            if (current.value == item) return true;
-            
-            current = current.next;
-        }
-        
-        return false;
+        return indexOf(item) != -1;
     }
     
     private boolean isEmpty() {
