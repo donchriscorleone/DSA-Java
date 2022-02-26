@@ -190,7 +190,6 @@ public class LinkedList {
         private int value;
         private Node next;
         
-        // Write a constructor
         public Node(int value) {
             this.value = value;
         }
