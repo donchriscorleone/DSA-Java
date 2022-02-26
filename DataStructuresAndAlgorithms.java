@@ -5,6 +5,7 @@
  */
 package datastructuresandalgorithms;
 
+import datastructuresandalgorithms.Array.Array;
 import datastructuresandalgorithms.LinkedList.LinkedList;
 import java.util.Arrays;
 
@@ -18,18 +19,14 @@ public class DataStructuresAndAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Lets test
-        LinkedList list = new LinkedList();
-        list.addLast(10);
-        list.addLast(20);
-        list.addFirst(5);
-        System.out.println(Arrays.toString(list.toArray()));
-//        list.reverse();
-        System.out.println(list.getKthFromTheEnd(1));
-        list.printMiddle();
-
-//        System.out.println(list.indexOf(20));
-//        list.removeFirst();
+        Array arr = new Array(2);
+        arr.add(2);
+        arr.add(3);
+        
+        arr.removeAt(0);
+        System.out.println("Index of 3 is " + arr.indexOf(3));
+        arr.print();
+        System.out.println("Size " + arr.size());
     }
     
 }
