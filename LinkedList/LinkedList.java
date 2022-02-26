@@ -92,6 +92,34 @@ public class LinkedList {
         return size;
     }
     
+    public int[] toArray() {
+        int[] arr = new int[size];
+        
+        Node pointer = first;
+        int index = 0;
+        while (pointer != null) {
+            arr[index++] = pointer.value;
+            pointer = pointer.next;
+        }
+        
+        return arr;
+    }
+    
+    public void reverse() {
+        Node previous = first;
+        Node current = first.next;
+        
+        last = first;
+        last.next = null;
+        while (current != null) {
+            Node next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        first = previous;
+    }
+    
     private Node getPrevious(Node node) {
         Node current = first;
         while (current != null) {
