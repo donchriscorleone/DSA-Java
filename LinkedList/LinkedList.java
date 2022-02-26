@@ -17,30 +17,30 @@ public class LinkedList {
     private int size;
     
     public void addLast(int item) {
-        Node node = new Node(item);
+        Node node = new Node(item); // Create an instance of Node
         
-        // check if first and last are empty
+        // check if list is empty
         if (isEmpty()) {
-            this.first = this.last = node;
+            this.first = this.last = node; // make the item be the first and last node.
         } else {
-            this.last.next = node;
-            this.last = node;
+            this.last.next = node; // the new node will be pointed by the current last node
+            this.last = node; // the last pointer will be pointed to the new node
         }
         
-        size++;
+        size++; // increase the size of the list
     }
     
     public void addFirst(int item) {
-        Node node = new Node(item);
+        Node node = new Node(item); // Create an instance of Node
         
-        if (isEmpty()) {
-            this.first = last = node;
+        if (isEmpty()) { // Check if the list is empty
+            this.first = last = node; // make the item be the first and last node. 
         } else {
-            node.next = this.first;
-            this.first = node;
+            node.next = this.first; // the next pointer of the new node will be the current head
+            this.first = node; // the head node is reassigned to the new node.
         }
         
-        size++;
+        size++; // increase the size of the list
     }
     
     public int indexOf(int item) {
@@ -63,15 +63,15 @@ public class LinkedList {
     public void removeFirst() {
         if (isEmpty()) throw new NoSuchElementException();
         
-        if (first == last) {
-            first = last = null;
+        if (first == last) { // check if the head and tail are the same.
+            first = last = null; // "deletes" the node
         } else {
-            Node second = this.first.next;
-            first.next = null;
-            this.first = second;
+            Node second = this.first.next; // container for the second node in the list
+            first.next = null; // the head's next pointer will be null
+            this.first = second; // the head will refer to the second node.
         }
         
-        size--;
+        size--; // decrease the size of the list
     }
     
     public void removeLast() {
@@ -79,13 +79,13 @@ public class LinkedList {
         
         if (first == last) {
             first = last = null;
-        } else {
-            Node previous = getPrevious(last);
-            last = previous;
-            last.next = null; 
+        } else {                                //[10 -> 20 -> 30]
+            Node previous = getPrevious(last); //        p      L
+            last = previous; // the tail/last will refer to the previous node
+            last.next = null; // the tail/last's next pointer will be null or deleted 
         }
         
-        size--;
+        size--; // decrease the size
     }
     
     public int size() {
@@ -173,13 +173,13 @@ public class LinkedList {
     }
     
     private Node getPrevious(Node node) {
-        Node current = first;
-        while (current != null) {
-            if (current.next == node) return current;
-            current = current.next;
+        Node current = first; // get the first or head
+        while (current != null) { // loop until the current is null
+            if (current.next == node) return current; // return the current node if its next is equal to the given node.
+            current = current.next; // current will be pointed to its next node.
         }
         
-        return null;
+        return null; // return null if no previous
     }
     
     private boolean isEmpty() {
@@ -190,6 +190,7 @@ public class LinkedList {
         private int value;
         private Node next;
         
+        // Write a constructor
         public Node(int value) {
             this.value = value;
         }
