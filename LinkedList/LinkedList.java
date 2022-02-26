@@ -120,6 +120,22 @@ public class LinkedList {
         first = previous;
     }
     
+    public int getKthFromTheEnd(int k) {
+        if (k <= 0 || k > size) throw new IllegalArgumentException();
+        
+        Node current = first;
+        Node next = first;
+        for (int i = 0; i < k - 1; i++)
+            next = next.next;
+        
+        while (next != last) {
+            current = current.next;
+            next = next.next;
+        }
+        
+        return current.value;
+    }
+    
     private Node getPrevious(Node node) {
         Node current = first;
         while (current != null) {
