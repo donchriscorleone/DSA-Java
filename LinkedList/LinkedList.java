@@ -123,6 +123,8 @@ public class LinkedList {
     public int getKthFromTheEnd(int k) {
         if (k <= 0 || k > size) throw new IllegalArgumentException();
         
+        if (isEmpty()) throw new IllegalStateException();
+        
         Node current = first;
         Node next = first;
         for (int i = 0; i < k - 1; i++)
