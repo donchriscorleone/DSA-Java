@@ -138,6 +138,21 @@ public class LinkedList {
         return current.value;
     }
     
+    public void printMiddle() {
+        if (isEmpty()) throw new IllegalStateException();
+        
+        Node a = first;
+        Node b = first;
+        
+        while (b != last && b.next != null) {
+            b = b.next.next;
+            a = a.next;
+        }
+        
+        if (b == last) System.out.println(a.value);
+        else System.out.println(a.value + " " + a.next.value);
+    }
+    
     private Node getPrevious(Node node) {
         Node current = first;
         while (current != null) {
