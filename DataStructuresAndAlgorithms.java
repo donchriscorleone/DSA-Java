@@ -5,8 +5,7 @@
  */
 package datastructuresandalgorithms;
 
-import datastructuresandalgorithms.Array.Array;
-import datastructuresandalgorithms.LinkedList.LinkedList;
+import datastructuresandalgorithms.Stacks.StringHelper;
 
 /**
  *
@@ -18,14 +17,8 @@ public class DataStructuresAndAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Array arr = new Array(2);
-        arr.add(2);
-        arr.add(3);
-        
-        arr.removeAt(1);
-        System.out.println("Index of 3 is " + arr.indexOf(3));
-        arr.print();
-        System.out.println("Size " + arr.size());
+        String r = StringHelper.reverse("abcd");
+        System.out.println(r);
     }
     
 }
