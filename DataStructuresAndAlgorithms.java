@@ -5,7 +5,7 @@
  */
 package datastructuresandalgorithms;
 
-import datastructuresandalgorithms.Stacks.StringHelper;
+import datastructuresandalgorithms.Stacks.*;
 
 /**
  *
@@ -17,8 +17,9 @@ public class DataStructuresAndAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String r = StringHelper.reverse("abcd");
-        System.out.println(r);
+        Expression exp = new Expression();
+        String expression = "[abc]";
+        System.out.println(exp.isBalance(expression));
     }
     
 }
