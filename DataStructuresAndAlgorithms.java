@@ -5,7 +5,7 @@
  */
 package datastructuresandalgorithms;
 
-import datastructuresandalgorithms.Stacks.*;
+import datastructuresandalgorithms.Queues.*;
 import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.Stack;
@@ -20,24 +20,15 @@ public class DataStructuresAndAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // first we declare a queue class
-        Queue<Integer> queue = new ArrayDeque<>();
-        
-        // add items to our queue
-        queue.add(10);
-        queue.add(20);
-        queue.add(30);
-        
-        // print the initial items
+        ArrayQueue queue = new ArrayQueue();
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.enqueue(40);
+        queue.dequeue();
+        queue.dequeue();
         System.out.println(queue);
-        
-        // use the reverse method
-        reverse(queue);
-        
-        // remove the first item in the queue
-        System.out.println("First item " + queue.remove());
-        // print again the queue
-        System.out.println(queue);
+        System.out.println(queue.peek());
     }
     
     // create the reverse method
