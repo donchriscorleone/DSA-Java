@@ -20,8 +20,9 @@ public class ArrayQueue {
     public void enqueue(int item) {
         if (isFull()) throw new IllegalStateException();
         
-        items[count++] = item;
-        back++;
+        items[back] = item;
+        back = (back + 1) % items.length;
+        count++;
     }
     
     public int dequeue() {
@@ -29,6 +30,7 @@ public class ArrayQueue {
         
         int item = items[front];
         items[front++] = 0;
+        count--;
         return item;
     }
     
