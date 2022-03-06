@@ -20,12 +20,12 @@ public class DataStructuresAndAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        StackQueue queue = new StackQueue();
-        queue.enqueue(10);
-        queue.enqueue(20);
-        queue.enqueue(30);
-        System.out.println(queue.dequeue());
+        PriorityQueue queue = new PriorityQueue(4);
+        queue.add(10);
+        queue.add(20);
+   
         System.out.println(queue);
+        System.out.println(queue.peek());
     }
     
     // create the reverse method
