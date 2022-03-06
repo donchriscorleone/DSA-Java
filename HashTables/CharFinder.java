@@ -6,14 +6,16 @@
 package datastructuresandalgorithms.HashTables;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
  * @author christopherii
  */
 public class CharFinder {
-    public char findNonRepeatedCharacter(String word) {
+    public char findFirstNonRepeatedCharacter(String word) {
         Map<Character, Integer> map = new HashMap(); // declare a hashmap
         
         char[] characters = word.toLowerCase().toCharArray(); // transform the given word into characters
@@ -26,5 +28,16 @@ public class CharFinder {
             if (map.get(ch) == 1) return ch; // return the current character that has a value of 1 in our map
         
         return 0; // return 0 if no non repeating characters.
+    }
+    
+    public char findFirstRepeatedCharacter(String word) {
+        Set<Character> set = new HashSet();
+        for (char ch: word.toCharArray()) {
+            if (set.contains(ch)) return ch;
+            
+            set.add(ch);
+        }
+        
+        return Character.MIN_VALUE;
     }
 }
