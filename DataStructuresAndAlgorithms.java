@@ -5,6 +5,7 @@
  */
 package datastructuresandalgorithms;
 
+import datastructuresandalgorithms.BinaryTrees.BinaryTree;
 import datastructuresandalgorithms.Stacks.*;
 
 /**
@@ -17,14 +18,14 @@ public class DataStructuresAndAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Stack stack = new Stack();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
+        BinaryTree tree = new BinaryTree();
+        tree.insert(10);
+        tree.insert(20);
+        tree.insert(30);
+        tree.insert(60);
+        tree.insert(70);
 
-        System.out.println(stack.peek());
-        System.out.println(stack.pop());
-        System.out.println(stack);
+        System.out.println(tree.find(20));
     }
     
 }
