@@ -32,12 +32,12 @@ public class CharFinder {
     
     public char findFirstRepeatedCharacter(String word) {
         Set<Character> set = new HashSet();
-        for (char ch: word.toCharArray()) {
+        for (char ch: word.toCharArray()) { // iterate over the given string
             if (set.contains(ch)) return ch;
             
-            set.add(ch);
+            set.add(ch); // Add the character to the set
         }
         
-        return Character.MIN_VALUE;
+        return Character.MIN_VALUE; // if no repeated character, return min value of the Character
     }
 }
