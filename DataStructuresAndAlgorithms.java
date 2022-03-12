@@ -18,8 +18,8 @@ public class DataStructuresAndAlgorithms {
      */
     public static void main(String[] args) {
         CharFinder finder = new CharFinder();
-        System.out.println(finder.findNonRepeatedCharacter("a green apple"));
-        System.out.println(finder.firstRepeatedCharacter("a green apple"));
+        System.out.println(finder.findFirstNonRepeatedCharacter("a green apple"));
+        System.out.println(finder.findFirstRepeatedCharacter("a green apple"));
     }
     
 }
