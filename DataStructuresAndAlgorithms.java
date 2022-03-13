@@ -17,9 +17,13 @@ public class DataStructuresAndAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        CharFinder finder = new CharFinder();
-        System.out.println("The repeated character: " + finder.findFirstRepeatedCharacter("a green apple"));
-        System.out.println("Character.MIN_VALUE: " + finder.findFirstRepeatedCharacter("abcd"));
+        HashTable table = new HashTable();
+        
+        table.put(6, "C");
+        table.put(8, "B");
+        table.put(11, "C");
+        table.remove(26);
+        System.out.println(table.get(6));
     }
     
 }
