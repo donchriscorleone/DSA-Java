@@ -17,13 +17,9 @@ public class DataStructuresAndAlgorithms {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        HashTable table = new HashTable();
-        
-        table.put(6, "C");
-        table.put(8, "B");
-        table.put(11, "C");
-        table.remove(26);
-        System.out.println(table.get(6));
+        int[] numbers = { 1, 2, 3,3,3, 4,4, 5,5};
+        int mostRepeated = HashTableExercises.mostFrequent(numbers);// use the class
+        System.out.println("Most repeated " + mostRepeated); // returns 3
     }
     
 }
